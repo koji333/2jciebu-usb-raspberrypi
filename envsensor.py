@@ -110,6 +110,11 @@ if __name__ == '__main__':
     except KeyError as e:
         print('Missing environment variable: '.format(e))
         exit(1)
+
+    # EnvSensorクラスの実体を作成します
+    e = EnvSensor()
+    # スレッドとして処理を開始します
+    e.start()        
         
     am = ambient.Ambient(CHANNEL_ID, WRITE_KEY)        
     last_uploaded = datetime.now()
@@ -126,10 +131,7 @@ if __name__ == '__main__':
             break
     #added end
             
-    # EnvSensorクラスの実体を作成します
-    e = EnvSensor()
-    # スレッドとして処理を開始します
-    e.start()
+
 
     while True:
         try:
