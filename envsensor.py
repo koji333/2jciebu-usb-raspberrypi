@@ -127,7 +127,7 @@ if __name__ == '__main__':
                     "created": timestamp.strftime("%Y/%m/%d %H:%M:%S")
                 })
                     
-            time.sleep(1)
+            time.sleep(5)
             # CO2データを取得し、print関数で表示します
             print("eCO2: {}".format(e.get_co2()))
         except KeyboardInterrupt:
