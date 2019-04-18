@@ -91,7 +91,7 @@ class EnvSensor(threading.Thread):
         return self.co2
 
     def get_temp(self):
-        raise self.temp
+        return self.temp
     
     def get_humi(self):
         raise NotImplementedError()
@@ -126,17 +126,11 @@ if __name__ == '__main__':
                     "d1": e.get_co2(),
                     "created": timestamp.strftime("%Y/%m/%d %H:%M:%S")
                 })
+                    
             time.sleep(1)
-        except KeyboardInterrupt:
-            break
-    #added end
-            
-
-
-    while True:
-        try:
-            time.sleep(10)
             # CO2データを取得し、print関数で表示します
             print("eCO2: {}".format(e.get_co2()))
         except KeyboardInterrupt:
             break
+    #added end
+            
